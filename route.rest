@@ -1,3 +1,27 @@
-GET http://localhost:300/subscribers
+//get all subscriber
+GET http://localhost:3000/subscribers
 
 ###
+//get one subscriber
+GET http://localhost:3000/subscribers/62fa8adc2d8d2bfbf03d9870
+
+###
+//create subscriber
+POST http://localhost:3000/subscribers
+Content-Type: application/json
+
+{
+  "name": "jhon's dad",
+  "subscribedTo": "web dev simplified"
+}
+
+###
+//delete subscriber
+DELETE  http://localhost:3000/subscribers/62fa8aac2b089796e662a9da
+
+### 
+//update subscriber
+PATCH http://localhost:3000/subscribers/62fa907f2cc5337d351a50dc
+Content-Type: application/json
+
+{"name": "John's sister"}

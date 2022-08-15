@@ -4,10 +4,15 @@ const mongoose = require('mongoose');
 
 require('dotenv').config();
 
-mongoose.connect(process.env.DBTABASE_URL, {useNewUrlParser: true})
+mongoose.connect(process.env.DBTABASE_URL,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  }
+)
 const db = mongoose.connection;
 db.on("error", (err) => {
-  console.error(err)
+  console.error("err",err.message)
 })
 
 db.once('open', () => {
